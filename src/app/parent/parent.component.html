@@ -1,0 +1,15 @@
+<form #form="ngForm" (ngSubmit)="sub(form.value)" >
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="text" #firstname="ngModel" required class="form-control" id="exampleFormControlInput1" name="firstname" placeholder="name@example.com" minlength="2" ngModel>
+        <div style="color: red;"*ngIf="firstname.invalid && firstname.touched  ">this input firstname is required</div>
+    </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <input type="text" #lastname="ngModel"  required class="form-control" id="exampleFormControlInput1" name="lastname" placeholder="name@example.com" minlength="2" ngModel>
+        <div style="color: red;"*ngIf="lastname.invalid && lastname.touched ">this input lastname is required</div>
+
+    </div>
+    
+  <button class="btn btn-success" [disabled]="form.invalid">valider</button>    
+</form>
